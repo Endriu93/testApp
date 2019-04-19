@@ -1,0 +1,55 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.awegrzyn.testapp",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "5.8.1",
+        "applicationType": "monolith",
+        "baseName": "TestApp",
+        "packageName": "com.awegrzyn.testapp",
+        "packageFolder": "com/awegrzyn/testapp",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": false,
+        "websocket": false,
+        "databaseType": "mongodb",
+        "devDatabaseType": "mongodb",
+        "prodDatabaseType": "mongodb",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MTI5ZmIzNTU3NGRiYjhiMDdiODM4NDZmNTc1ODg0YzM4OTRhMzY0Njg3YjVmY2EwNzU3ZWE3YzA0NjQxMzdiNDUxMGExNDM1MjNiZWE4NmZlZWIyZWI1NjVjZTc1ZTczMzU5Y2ZhNjk4YzJmZTlkNDUwODZjOWMwYTM5YmZkZjc=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [
+            {
+                "name": "generator-jhipster-docker",
+                "version": "2.5.0"
+            },
+            {
+                "name": "generator-jhipster-primeng",
+                "version": "2.3.0"
+            },
+            {
+                "name": "generator-jhipster-primeng-charts",
+                "version": "1.2.0"
+            },
+            {
+                "name": "generator-jhipster-angular-material-integration",
+                "version": "1.0.17"
+            }
+        ],
+        "enableTranslation": true,
+        "nativeLanguage": "en",
+        "languages": ["en", "pl"]
+    }
+}
