@@ -4,7 +4,7 @@
 
     <groupId>com.awegrzyn.testapp</groupId>
     <artifactId>test-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Test App</name>
 
