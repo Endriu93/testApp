@@ -1,0 +1,25 @@
+{
+    "testApp": {
+        "book": {
+            "home": {
+                "title": "Book",
+                "createLabel": "Dodaj Book",
+                "createOrEditLabel": "Dodaj lub edytuj: Book"
+            },
+            "created": "Utworzono nowy obiekt typu Book z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Book z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Book z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Book {{ id }}?"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "title": "Title",
+            "description": "Description",
+            "publicationDate": "Publication Date",
+            "price": "Price",
+            "author": "Author"
+        }
+    }
+}
