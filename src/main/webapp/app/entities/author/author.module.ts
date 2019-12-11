@@ -13,11 +13,12 @@ import {
     authorRoute,
     authorPopupRoute
 } from './';
+import { TestModule } from 'app/entities/test/test.module';
 
 const ENTITY_STATES = [...authorRoute, ...authorPopupRoute];
 
 @NgModule({
-    imports: [TestAppSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [TestAppSharedModule, RouterModule.forChild(ENTITY_STATES), TestModule],
     declarations: [AuthorComponent, AuthorDetailComponent, AuthorUpdateComponent, AuthorDeleteDialogComponent, AuthorDeletePopupComponent],
     entryComponents: [AuthorComponent, AuthorUpdateComponent, AuthorDeleteDialogComponent, AuthorDeletePopupComponent],
     providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],
