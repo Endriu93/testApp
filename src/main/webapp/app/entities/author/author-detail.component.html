@@ -14,7 +14,7 @@
                     <span>{{author.birthDate}}</span>
                 </dd>
             </dl>
-            <jhi-one [(value)]="author.name"></jhi-one>
+            <jhi-one [(value)]="author.name" (valueChange)="print($event)"></jhi-one>
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">

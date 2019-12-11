@@ -21,4 +21,8 @@ export class AuthorDetailComponent implements OnInit {
     previousState() {
         window.history.back();
     }
+
+    print(message: string) {
+        console.log(this.author.name);
+    }
 }
