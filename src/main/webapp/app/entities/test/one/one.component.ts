@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'jhi-one',
@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
     constructor() {}
+
+    @Input()
+    value: string;
+
+    @Output()
+    valueChange = new EventEmitter<string>();
 
     ngOnInit() {}
 }
