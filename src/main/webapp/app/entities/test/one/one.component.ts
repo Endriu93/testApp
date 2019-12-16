@@ -15,4 +15,8 @@ export class OneComponent implements OnInit {
     valueChange = new EventEmitter<string>();
 
     ngOnInit() {}
+
+    getValue() {
+        return this.value;
+    }
 }
