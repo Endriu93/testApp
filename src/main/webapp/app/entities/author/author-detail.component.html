@@ -7,7 +7,8 @@
             <dl class="row-md jh-entity-details">
                 <dt><span jhiTranslate="testApp.author.name">Name</span></dt>
                 <dd>
-                    <span jhiAwdir [jhiAwText]="'tralalala'" [jhiBackground]="'yellow'">{{author.name}}</span>
+<!--                    <span jhiAwdir [jhiAwText]="'tralalala'" [jhiBackground]="'yellow'">{{author.name}}</span>-->
+                    <span>{{author.name}}</span>
                 </dd>
                 <dt><span jhiTranslate="testApp.author.birthDate">Birth Date</span></dt>
                 <dd>
@@ -15,6 +16,8 @@
                 </dd>
             </dl>
             <jhi-one [(value)]="author.name" (valueChange)="print($event)"></jhi-one>
+            <input [value]="author.name">
+            <input [(ngModel)]="author.name">
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
