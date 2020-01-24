@@ -18,6 +18,7 @@
             <jhi-one [(value)]="author.name" (valueChange)="print($event)"></jhi-one>
             <input [value]="author.name">
             <input [(ngModel)]="author.name">
+            <input type="checkbox" [(ngModel)]="checkbox">{{checkbox}}
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">

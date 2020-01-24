@@ -9,6 +9,7 @@ import { IAuthor } from 'app/shared/model/author.model';
 })
 export class AuthorDetailComponent implements OnInit {
     author: IAuthor;
+    checkbox;
 
     constructor(protected activatedRoute: ActivatedRoute) {}
 
