@@ -19,6 +19,8 @@
             <input [value]="author.name">
             <input [(ngModel)]="author.name">
             <input type="checkbox" [(ngModel)]="checkbox">{{checkbox}}
+            <p>async: {{name_async}}</p>
+            <input [(ngModel)]="author.name" (change)="updateModel()">
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">

@@ -10,6 +10,7 @@ import { IAuthor } from 'app/shared/model/author.model';
 export class AuthorDetailComponent implements OnInit {
     author: IAuthor;
     checkbox;
+    name_async;
 
     constructor(protected activatedRoute: ActivatedRoute) {}
 
@@ -25,5 +26,14 @@ export class AuthorDetailComponent implements OnInit {
 
     print(message: string) {
         console.log(this.author.name);
+    }
+
+    async updateModel() {
+        let k = 0;
+        for (let i = 0; i < 100000; i++) {
+            k = k + 1;
+            this.print(k.toString());
+        }
+        this.name_async = this.author.name + k;
     }
 }
