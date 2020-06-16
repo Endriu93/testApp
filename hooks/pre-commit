@@ -1,0 +1,4 @@
+#!/bin/sh
+# use hooks instead of .git/hooks:
+# git config core.hooksPath hooks
+echo "Running pre-commit hook"
