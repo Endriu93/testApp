@@ -1,4 +1,23 @@
 #!/bin/sh
-# use hooks instead of .git/hooks:
 # git config core.hooksPath hooks
-echo "Running pre-commit hook"
+echo "Running pre-commit hook";
+prefix="<!--COMMIT";
+
+# define the file where commit info will be saved
+file=src/main/webapp/index.html;
+
+# remove last commit tag if exists.
+tag=$(tail -n 1 $file);
+if [[ $tag == $prefix* ]]
+then
+    head -n -1 $file > tmp;
+    mv tmp $file;
+fi
+
+# add commit tag if not master
+branch=$(git rev-parse --abbrev-ref HEAD);
+if [[ ! $branch == master ]]
+then
+    echo $prefix - $(git log -1 --pretty=format:"%an - %ad" --date=iso) >> $file;
+fi
+
