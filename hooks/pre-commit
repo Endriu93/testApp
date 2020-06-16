@@ -18,6 +18,6 @@ fi
 branch=$(git rev-parse --abbrev-ref HEAD);
 if [[ ! $branch == master ]]
 then
-    echo $prefix - $(git log -1 --pretty=format:"%an - %ad" --date=iso) >> $file;
+    echo $prefix - $(git config user.name) - $(date +%Y-%m-%d\ %H:%M:%S) >> $file;
 fi
 
