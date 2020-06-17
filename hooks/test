@@ -4,7 +4,7 @@ echo "Running pre-commit hook";
 
 COMMENT="last commit version";
 lastCommit=$(git log -1 --format='%s');
-if [[  $lastCommit == $COMMENT ]];
+if [[  $(git log -1 --format='%s') == $COMMENT ]];
 then echo "var is unset";
 else echo "var is set to '$var'";
 fi

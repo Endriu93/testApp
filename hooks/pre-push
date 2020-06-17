@@ -1,35 +1,32 @@
 #!/bin/sh
+COMMENT="last commit version";
+PREFIX="<!--LAST_COMMIT: ";
 # git config core.hooksPath hooks
-echo "Running pre-commit hook";
-
-comment="last commit version";
-if [  $(git log -1 --format='%s') == $comment ];
-then echo "var is unset";
-else echo "var is set to '$var'";
-fi
+echo "Running pre-push hook";
 
 # define the file where commit info will be saved
 file=src/main/webapp/index.html;
 
 # don't modify!
-prefix="<!--LAST_COMMIT: ";
-tag=$prefix$(git config user.name)" "$(date +%Y-%m-%d\ %H:%M:%S)"-->";
-
-if grep -q "$prefix" $file
-then
-    sed -i -e "s/$prefix.*/$tag/g" $file;
+if [[  $(git log -1 --format='%s') == $COMMENT ]];
+    then exit 0;
 else
-    echo $tag >> $file;
-fi
+    tag=$PREFIX$(git config user.name)" "$(date +%Y-%m-%d\ %H:%M:%S)"-->";
 
-branch=$(git rev-parse --abbrev-ref HEAD);
-if [[ $branch == master ]]
-then
-    sed -i -e "s/$prefix.*//g" $file;
-fi
+    if grep -q "$PREFIX" $file
+    then
+        sed -i -e "s/$PREFIX.*/$tag/g" $file;
+    else
+        echo $tag >> $file;
+    fi
 
-git commit $file -m $comment;
-exit 1;
-#git commit $file --amend --no-edit
-#git push --no-verify
+    branch=$(git rev-parse --abbrev-ref HEAD);
+    if [[ $branch == master ]]
+    then
+        sed -i -e "s/$PREFIX.*//g" $file;
+    fi
+
+    git commit $file -m $COMMENT;
+    exit 1;
+fi
 
