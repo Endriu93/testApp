@@ -1,26 +1,28 @@
 #!/bin/sh
 # git config core.hooksPath hooks
 echo "Running pre-commit hook";
-prefix="<!--COMMIT";
 
 # define the file where commit info will be saved
 file=src/main/webapp/index.html;
 
-# remove last commit tag if exists.
-tag=$(tail -n 1 $file);
-if [[ $tag == $prefix* ]]
+# don't modify!
+prefix="<!--COMMIT: ";
+prefixAuthor=$prefix$(git config user.name);
+tag=$prefixAuthor" "$(date +%Y-%m-%d\ %H:%M:%S);
+
+if grep -q "$prefixAuthor" $file
 then
-    head -n -1 $file > tmp;
-    mv tmp $file;
+    sed -i -e "s/$prefixAuthor.*/$tag/g" $file;
+else
+    echo $tag >> $file;
 fi
 
-# add commit tag if not master
 branch=$(git rev-parse --abbrev-ref HEAD);
-if [[ ! $branch == master ]]
+if [[ $branch == master ]]
 then
-    echo $prefix - $(git config user.name) - $(date +%Y-%m-%d\ %H:%M:%S) >> $file;
+    sed -i -e "s/$prefix.*//g" $file;
 fi
 
-# add file to commit
 git add $file;
+
 
