@@ -21,3 +21,6 @@ then
     echo $prefix - $(git config user.name) - $(date +%Y-%m-%d\ %H:%M:%S) >> $file;
 fi
 
+# add file to commit
+git add $file;
+
