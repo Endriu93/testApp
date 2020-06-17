@@ -22,6 +22,6 @@ then
     sed -i -e "s/$prefix.*//g" $file;
 fi
 
-git commit $file -m "last commit version";
-
+#git commit $file -m "last commit version";
+git commit $file --amend --no-edit
 
