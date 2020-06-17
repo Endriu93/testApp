@@ -1,7 +1,7 @@
 #!/bin/sh
 COMMENT="v";
 PREFIX="<!--LAST_COMMIT: ";
-ENABLED=1;
+ENABLED=0;
 # git config core.hooksPath hooks
 echo "Running pre-push hook";
 
