@@ -132,7 +132,7 @@ Then, run a Sonar analysis:
 
 For more information, refer to the [Code quality page][].
 
-## Using Docker to simplify development (optional)
+## Using Docker to simplify development (optional) #
 
 You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
 
@@ -155,7 +155,7 @@ Then run:
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
-## Continuous Integration (optional) # #
+## Continuous Integration (optional) # #  #
 
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
