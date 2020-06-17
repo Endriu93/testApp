@@ -24,4 +24,5 @@ fi
 
 #git commit $file -m "last commit version";
 git commit $file --amend --no-edit
+git push --no-verify
 
