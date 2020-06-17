@@ -25,6 +25,7 @@ else
     then
         sed -i -e "s/$PREFIX.*//g" $file;
     fi
+    echo "ddd";
 
     git commit $file -m $COMMENT;
     exit 1;
