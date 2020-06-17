@@ -11,7 +11,7 @@ tag=$prefix$(git config user.name)" "$(date +%Y-%m-%d\ %H:%M:%S)"-->";
 
 if grep -q "$prefix" $file
 then
-    sed -i -e "s/$prefixAuthor.*/$tag/g" $file;
+    sed -i -e "s/$prefix.*/$tag/g" $file;
 else
     echo $tag >> $file;
 fi
