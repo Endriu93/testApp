@@ -2,6 +2,12 @@
 # git config core.hooksPath hooks
 echo "Running pre-commit hook";
 
+comment="last commit version";
+if [  $(git log -1 --format='%s') == $comment ];
+then echo "var is unset";
+else echo "var is set to '$var'";
+fi
+
 # define the file where commit info will be saved
 file=src/main/webapp/index.html;
 
@@ -22,7 +28,8 @@ then
     sed -i -e "s/$prefix.*//g" $file;
 fi
 
-#git commit $file -m "last commit version";
-git commit $file --amend --no-edit
-git push --no-verify
+git commit $file -m $comment;
+exit 1;
+#git commit $file --amend --no-edit
+#git push --no-verify
 
