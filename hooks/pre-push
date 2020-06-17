@@ -1,5 +1,5 @@
 #!/bin/sh
-COMMENT="last commit version";
+COMMENT="V.";
 PREFIX="<!--LAST_COMMIT: ";
 # git config core.hooksPath hooks
 echo "Running pre-push hook";
