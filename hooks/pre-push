@@ -27,6 +27,7 @@ else
     fi
 
     git commit $file -m "$COMMENT";
+    echo "last version was commited. Invoke push again!"
     exit 1;
 fi
 
