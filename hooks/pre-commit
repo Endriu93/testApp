@@ -8,7 +8,7 @@ file=src/main/webapp/index.html;
 # don't modify!
 prefix="<!--COMMIT: ";
 prefixAuthor=$prefix$(git config user.name);
-tag=$prefixAuthor" "$(date +%Y-%m-%d\ %H:%M:%S);
+tag=$prefixAuthor" "$(date +%Y-%m-%d\ %H:%M:%S)"-->";
 
 if grep -q "$prefixAuthor" $file
 then
