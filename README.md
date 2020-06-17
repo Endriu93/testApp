@@ -87,7 +87,7 @@ will generate few files:
     create src/main/webapp/app/my-component/my-component.component.ts
     update src/main/webapp/app/app.module.ts
 
-## Building for production # # #
+## Building for production # # # #
 
 To optimize the TestApp application for production, run:
 
