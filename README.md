@@ -46,7 +46,7 @@ Service workers are commented by default, to enable them please uncomment the fo
 
 Note: workbox creates the respective service worker and dynamically generate the `service-worker.js`
 
-### Managing dependencies #
+### Managing dependencies # #
 
 For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
 
