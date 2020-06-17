@@ -1,6 +1,7 @@
 #!/bin/sh
-COMMENT="v";
+COMMIT_MESSAGE="v";
 PREFIX="<!--LAST_COMMIT: ";
+POSTFIX="-->";
 ENABLED=1;
 # git config core.hooksPath hooks
 echo "Running pre-push hook";
@@ -9,10 +10,13 @@ echo "Running pre-push hook";
 file=src/main/webapp/index.html;
 
 # don't modify!
-if [[  $(git log -1 --format='%s') == $COMMENT ]] || [[ ! $ENABLED == 1 ]];
+branch=$(git rev-parse --abbrev-ref HEAD);
+if [[ $branch == master ]] || [[  $(git log -1 --format='%s') == $COMMIT_MESSAGE ]] || [[ ! $ENABLED == 1 ]];
     then exit 0;
 else
-    tag=$PREFIX$(git config user.name)" "$(date +%Y-%m-%d\ %H:%M:%S)"-->";
+    USER=$(git config user.name);
+    DATE=$(date +%Y-%m-%d\ %H:%M:%S);
+    tag=$PREFIX${USER:0:7}" "$DATE$POSTFIX;
 
     if grep -q "$PREFIX" $file
     then
@@ -21,13 +25,7 @@ else
         echo $tag >> $file;
     fi
 
-    branch=$(git rev-parse --abbrev-ref HEAD);
-    if [[ $branch == master ]]
-    then
-        sed -i -e "s/$PREFIX.*//g" $file;
-    fi
-
-    git commit $file -m "$COMMENT";
+    git commit $file -m "$COMMIT_MESSAGE";
     echo "last version was commited. Invoke push again!"
     exit 1;
 fi
